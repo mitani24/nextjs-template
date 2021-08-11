@@ -1,5 +1,10 @@
-import MyHeader from "@/components/MyHeader";
+import { Flex } from "@chakra-ui/react";
+import LoginForm from "@/components/LoginForm";
 
 export default function Home() {
-  return <MyHeader />;
+  return (
+    <Flex height="100vh" alignItems="center" justifyContent="center">
+      <LoginForm />
+    </Flex>
+  );
 }
