@@ -8,6 +8,8 @@ Next.js template using
 - [React Hook Form](https://react-hook-form.com/jp/)
 - [Zod](https://github.com/colinhacks/zod)
 - [Jotai](https://jotai.pmnd.rs/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Prettier](https://prettier.io/)
 
 ## Create application
 
