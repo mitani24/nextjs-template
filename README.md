@@ -6,6 +6,7 @@ Next.js template using
 - [TypeScript](https://www.typescriptlang.org/)
 - [Chakra UI](https://chakra-ui.com/)
 - [React Hook Form](https://react-hook-form.com/jp/)
+- [Zod](https://github.com/colinhacks/zod)
 - [Jotai](https://jotai.pmnd.rs/)
 
 ## Create application
