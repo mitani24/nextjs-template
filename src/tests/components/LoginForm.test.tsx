@@ -1,11 +1,11 @@
-import { render, screen } from "@testing-library/react";
-import LoginForm from "@/components/LoginForm";
+import { render, screen } from "@testing-library/react"
+import LoginForm from "@/components/LoginForm"
 
 describe("LoginForm", () => {
   it("renders a heading", () => {
-    render(<LoginForm />);
+    render(<LoginForm />)
 
-    const heading = screen.getByRole("heading");
-    expect(heading).toBeInTheDocument();
-  });
-});
+    const heading = screen.getByRole("heading")
+    expect(heading).toBeInTheDocument()
+  })
+})

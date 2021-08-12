@@ -1,4 +1,4 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form"
 import {
   Button,
   Flex,
@@ -8,16 +8,16 @@ import {
   FormLabel,
   Heading,
   Input,
-} from "@chakra-ui/react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+} from "@chakra-ui/react"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { z } from "zod"
 
 const schema = z.object({
   emailAddress: z.string().nonempty().email(),
   password: z.string().nonempty().min(8),
-});
+})
 
-type Inputs = z.infer<typeof schema>;
+type Inputs = z.infer<typeof schema>
 
 export default function LiginFormZod({ ...delegated }: FlexProps) {
   const {
@@ -27,12 +27,12 @@ export default function LiginFormZod({ ...delegated }: FlexProps) {
   } = useForm<Inputs>({
     mode: "onChange",
     resolver: zodResolver(schema),
-  });
+  })
 
   const onSubmit: SubmitHandler<Inputs> = (data, event) => {
-    event?.preventDefault();
-    console.log(data);
-  };
+    event?.preventDefault()
+    console.log(data)
+  }
 
   return (
     <Flex direction="column" p={12} rounded={6} {...delegated}>
@@ -53,5 +53,5 @@ export default function LiginFormZod({ ...delegated }: FlexProps) {
         </Button>
       </form>
     </Flex>
-  );
+  )
 }
