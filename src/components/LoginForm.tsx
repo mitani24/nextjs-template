@@ -19,7 +19,7 @@ const schema = z.object({
 
 type Inputs = z.infer<typeof schema>
 
-export default function LiginFormZod({ ...delegated }: FlexProps) {
+export default function LoginForm({ ...delegated }: FlexProps) {
   const {
     register,
     handleSubmit,
