@@ -13,7 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 
 const schema = z.object({
-  emailAddress: z.string().nonempty().email(),
+  email: z.string().nonempty().email(),
   password: z.string().nonempty().min(8),
 })
 
@@ -25,7 +25,7 @@ export default function LoginForm({ ...delegated }: FlexProps) {
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<Inputs>({
-    mode: "onChange",
+    mode: "onTouched",
     resolver: zodResolver(schema),
   })
 
@@ -38,12 +38,19 @@ export default function LoginForm({ ...delegated }: FlexProps) {
     <Flex direction="column" p={12} rounded={6} {...delegated}>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Heading mb={6}>Log in</Heading>
-        <FormControl isRequired isInvalid={!!errors.emailAddress} mb={3}>
-          <FormLabel>Email address</FormLabel>
-          <Input variant="filled" type="email" {...register("emailAddress")} />
-          <FormErrorMessage>{errors.emailAddress?.message}</FormErrorMessage>
+
+        <FormControl id="email" isRequired isInvalid={!!errors.email} mb={3}>
+          <FormLabel>Email</FormLabel>
+          <Input variant="filled" type="email" {...register("email")} />
+          <FormErrorMessage>{errors.email?.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isRequired isInvalid={!!errors.password} mb={6}>
+
+        <FormControl
+          id="password"
+          isRequired
+          isInvalid={!!errors.password}
+          mb={6}
+        >
           <FormLabel>Password</FormLabel>
           <Input variant="filled" type="password" {...register("password")} />
           <FormErrorMessage>{errors.password?.message}</FormErrorMessage>
